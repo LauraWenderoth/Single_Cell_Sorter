@@ -6,7 +6,8 @@ from PIL import Image, ImageTk
 # Step 1: Create a function to select the image folder and create sorted folders
 def select_image_folder():
     # Use filedialog to select the folder
-    image_folder = filedialog.askdirectory()
+    initial_dir = os.path.expanduser("~")
+    image_folder = filedialog.askdirectory(initialdir=initial_dir)
 
     if image_folder:
         # Create the 'sorted_' folder in the parent directory
@@ -50,6 +51,7 @@ def select_image_folder():
         # Close the current window and open the sorting window
         root.destroy()
         open_sorting_window(sorted_folder, categories, image_folder, get_image_paths(image_folder))
+
 
 # Step 2: Create a function to get a list of image paths recursively
 def get_image_paths(folder):
