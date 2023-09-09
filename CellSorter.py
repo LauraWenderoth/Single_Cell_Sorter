@@ -2,6 +2,8 @@ import os
 import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
+from tkmacosx import Button as tkmacosxButton
+
 
 # Step 1: Create a function to select the image folder and create sorted folders
 def select_image_folder():
@@ -17,32 +19,61 @@ def select_image_folder():
 
         # Create subfolders for each category
         categories = {
-            "Abnormal eosinophil": "purple",
-            "Artefact": "gray",
-            "Basophil": "royalblue",
-            "Blast": "orange",
-            "Erythroblast": "red",
-            "Eosinophil": "cornflowerblue",
-            "Hairy cell": "green",
-            "Smudge cell": "darkgreen",
-            "Immature lymphocyte": "lightblue",
-            "Lymphocyte": "blue",
-            "Metamyelocyte": "goldenrod",
-            "Imature Granulocyt": "goldenrod",
-            "Monoblast": "yellow",
-            "Monocyte": "dodgerblue",
-            "Myelocyte": "chocolate",
-            "Myeloblast": "orange",
-            "Neutrophil (band)": "navy",
-            "Neutrophil (segmented)": "darkblue",
-            "Not identifiable": "black",
-            "Other cell": "brown",
-            "Proerythroblast": "red",
-            "Plasma cell": "pink",
-            "Promyelocyte (bilobed)": "peru",
-            "Promyelocyte": "sandybrown",
-            "Lymphocyte (atypical)": "lightblue",
-            "Platlets": "brown"
+            "blast": "violet",
+            "myeloblast": "fuchsia",
+            "promyelocyte":"cornflowerblue",
+            "myelocyte": "royalblue",
+            "metamyelocyte": "blue",
+            "neutrophil band": "mediumblue",
+            "neutrophil segmented": "darkblue",
+            "monocyte": "teal",
+            "monoblast": "darkturquoise",
+            "eosinophil": "limegreen",
+            "abnormal eosinophil": "forestgreen",
+            "basophil": "green",
+            "proerythroblast": "firebrick",
+            "erythroblast": "red",
+            "lymphocyte": "seagreen",
+            "lymphocyte atypical reactive": "mediumseagreen",
+            "lymphocyte atypical neoplastic": "springgreen",
+            "immature lymphocyte": "aquamarine",
+            "hairy cell": "lightgreen",
+            "plasma cell": "purple",
+            "smudge cell": "dimgrey",
+            "artefact": "sienna",
+            "promyelocyte malignant": "navy",
+            "not identified": "darkorange",
+            "othter cell": "yellow",
+            "platlet": "darkviolet",
+        }
+
+        font_color = {
+            "blast": "black",
+            "myeloblast": "black",
+            "promyelocyte":"white",
+            "myelocyte": "white",
+            "metamyelocyte": "white",
+            "neutrophil band": "white",
+            "neutrophil segmented": "white",
+            "monocyte": "white",
+            "monoblast": "white",
+            "eosinophil": "white",
+            "abnormal eosinophil": "white",
+            "basophil": "white",
+            "proerythroblast": "white",
+            "erythroblast": "white",
+            "lymphocyte": "white",
+            "lymphocyte atypical reactive": "white",
+            "lymphocyte atypical neoplastic": "black",
+            "immature lymphocyte": "black",
+            "hairy cell": "black",
+            "plasma cell": "white",
+            "smudge cell": "white",
+            "artefact": "white",
+            "promyelocyte malignant": "white",
+            "not identified": "black",
+            "othter cell": "black",
+            "platlet": "white",
         }
 
         for category in categories:
@@ -50,7 +81,7 @@ def select_image_folder():
 
         # Close the current window and open the sorting window
         root.destroy()
-        open_sorting_window(sorted_folder, categories, image_folder, get_image_paths(image_folder))
+        open_sorting_window(sorted_folder, categories,font_color, image_folder, get_image_paths(image_folder))
 
 
 # Step 2: Create a function to get a list of image paths recursively
@@ -63,7 +94,7 @@ def get_image_paths(folder):
     return image_paths
 
 # Step 3: Modify the open_sorting_window function to display the first image on the left side
-def open_sorting_window(sorted_folder, categories, image_folder, image_paths):
+def open_sorting_window(sorted_folder, categories,font_color, image_folder, image_paths):
     # Create a Tkinter window
     root = tk.Tk()
     root.title("Image Sorter")
@@ -148,13 +179,19 @@ def open_sorting_window(sorted_folder, categories, image_folder, image_paths):
 
     # Create buttons for each category
     for category, color in categories.items():
-        button = tk.Button(button_frame, text=category, bg=color, command=lambda cat=category: move_to_category(cat))
+        button = tkmacosxButton(
+            button_frame,
+            text=category,
+            bg=color,
+            fg=font_color[category],
+            command=lambda cat=category: move_to_category(cat),
+        )
         button.pack(side=tk.TOP, fill=tk.X)
 
-     # Create a "Back" button under the image
-    back_button = tk.Button(root, text="Back", command=move_back)
-    back_button.pack(side=tk.BOTTOM, padx=10, pady=10)
 
+    # Create a "Back" button under the image using tkmacosx
+    back_button = tkmacosxButton(root, text="Back", command=move_back)
+    back_button.pack(side=tk.BOTTOM, padx=10, pady=10)
 
     # Create a canvas to display the image
     canvas = tk.Canvas(root, width=500, height=500)
