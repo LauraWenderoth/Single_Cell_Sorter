@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 from tkmacosx import Button as tkmacosxButton
 
 
+
 # Step 1: Create a function to select the image folder and create sorted folders
 def select_image_folder():
     # Use filedialog to select the folder
