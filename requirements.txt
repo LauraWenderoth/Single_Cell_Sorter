@@ -1,7 +1,15 @@
-altgraph @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
-cffi==1.16.0
-cryptography==42.0.5
-future @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
-macholib @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
-pycparser==2.21
-six @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
+altgraph==0.17.4
+certifi==2024.8.30
+charset-normalizer==3.4.0
+colour==0.1.5
+idna==3.10
+kagglehub==0.3.3
+macholib==1.16.3
+packaging==24.1
+Pillow==10.0.0
+pyinstaller==6.11.0
+pyinstaller-hooks-contrib==2024.9
+requests==2.32.3
+tkmacosx==1.0.5
+tqdm==4.66.6
+urllib3==2.2.3
