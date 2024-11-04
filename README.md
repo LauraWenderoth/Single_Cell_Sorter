@@ -1,6 +1,6 @@
 # ClickCell 🦠 📸🧬 - Simple, intuitive and productive
 
-Welcome to **ClickCell** ! This application is designed to provide a low-entry, simple, and fast solution for classifying single-cell images. While intended for hematological single-cell images, this app can easily adapt to various types of images, making it versatile for different research needs.
+Welcome to **ClickCell** ! This application is designed to provide a low-entry, simple, and fast solution for classifying single-cell images. While intended for haematological single-cell images, this app can easily adapt to various types of images, making it versatile for different research needs.
 
 ![CellSorter Application Screenshot](/images/ClickCell.png)
 
@@ -16,14 +16,14 @@ Welcome to **ClickCell** ! This application is designed to provide a low-entry, 
 
 ## 📦 ⬇  Download
 
-1. Clone git reposetory
+1. Clone git repository
 
     ```bash
-    git clone https://github.com/LauraWenderoth/Single_Cell_Sorter.git
-    cd Single_Cell_Sorter
+    git clone https://github.com/LauraWenderoth/ClickCell.git
+    cd ClickCell
     ```
 
-2. create conda environment and install requerments
+2. create conda environment and install requirements
 
     ```bash
     conda create --name env_clickcell python=3.10
@@ -45,11 +45,11 @@ Welcome to **ClickCell** ! This application is designed to provide a low-entry, 
 
 ## 📥 Getting Started
 
-1. **Open the App**: Double-click the application icon in the ``Single_Cell_Sorter/dist`` folder to launch it.  
+1. **Open the App**: Double-click the application icon in the ``ClickCell/dist`` folder to launch it.  
 
     ![CellSorter Application Screenshot](/images/open_app.png)
 
-    or start app via command line
+    or start the app via command line
 
     ```bash
     cd dist
