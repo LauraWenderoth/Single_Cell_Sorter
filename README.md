@@ -2,6 +2,8 @@
 
 Welcome to **ClickCell** ! This application is designed to provide a low-entry, simple, and fast solution for classifying single-cell images. While intended for hematological single-cell images, this app can easily adapt to various types of images, making it versatile for different research needs.
 
+![CellSorter Application Screenshot](/images/ClickCell.png)
+
 🚀 **Purpose** 🚀 ClickCell aims to assist research groups in the initial prototyping phase by offering an intuitive interface for image classification. With this app, you can quickly classify unlabelled single-cell images simply by viewing them and clicking a button corresponding to the desired class.
 
 ## 🖥️ Features
@@ -47,12 +49,24 @@ Welcome to **ClickCell** ! This application is designed to provide a low-entry, 
 
     ![CellSorter Application Screenshot](/images/open_app.png)
 
-    This will open a folder where you can select the location of the images you want to classify.
+    or start app via command line
+
+    ```bash
+    cd dist
+    ./ClickCell
+    ```
+
+3. **Choose Your Images**: This will open a folder where you can select the location of the images you want to classify.
 
     ![CellSorter Folder Select](/images/select.png)
 
-3. **Choose Your Images**: After selecting the folder with your images, the app will display one image at a time, along with buttons for each class and a back button (which allows you to go back one image).
-4. **Classification Process**: As you classify the images, the app will copy them from the original folder to a new folder called `your_name_sorted`, creating subfolders for each class. The aim is to have the original folder empty by the end of the classification process.
+4. **Classification Process**: After selecting the folder with your images, the app will display one image at a time, along with buttons for each class and a back button (which allows you to go back one image). As you classify the images, the app will copy them from the original folder to a new folder called `$YOURNAME_sorted`, creating subfolders for each class. The aim is to have the original folder empty by the end of the classification process.
+
+    ![Sorted](/images/sorted_folder.png)
+
+5. **Exiting the App**: To exit, click the red button in the top-left corner. When you reopen the app, it will pick up from where you left off, with progress updated to show the remaining unclassified images.
+
+    ![Sorted](/images/adjustedCLickcell.png)
 
 ## 🛠️ Requirements
 
