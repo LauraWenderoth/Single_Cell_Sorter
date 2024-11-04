@@ -73,4 +73,4 @@ Welcome to **ClickCell** ! This application is designed to provide a low-entry, 
 - macOS (version 10.15 or later recommended) or Linux
 - A collection of unclassified single-cell images
 
-Thank you for choosing **CellClassify** for your research! Together, we can simplify the classification process and enhance our understanding of hematopathology. Happy classifying! 🎉
+Thank you for choosing **ClickCell** for your research! Together, we can simplify the classification process and enhance our understanding of hematopathology. Happy classifying! 🎉
